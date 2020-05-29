@@ -7,7 +7,13 @@ function setDate() {
     const now = new Date();
     const seconds = now.getSeconds();
     const secondsDegrees = ((seconds/60)*360 +90);
+    if(seconds=== 0){
+        secondHand.style.transition='none'
+    }else{
+        secondHand.style.transition='all 0.05s'
+    }
     secondHand.style.transform=`rotate(${secondsDegrees}deg)`
+    
     const mins= now.getMinutes();
     const minsDegrees = ((mins/60)*360 +90);
     minsHand.style.transform=`rotate(${minsDegrees}deg)`;
